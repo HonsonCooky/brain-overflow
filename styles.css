@@ -21,10 +21,6 @@ footer {
     padding: 1em 0;
 }
 
-label {
-    margin-right: 2ch;
-}
-
 code {
     border: 1px dotted;
     font-family: monospace;
