@@ -16,6 +16,13 @@ body {
     font-family: system-ui;
 }
 
+main > details {
+    summary {
+        cursor: pointer;
+        font-size: larger;
+    }
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -39,7 +46,7 @@ footer > fieldset {
 
     * {
         padding: 0.5em 1ch;
-        font-size: 14px;
+        font-size: medium;
         font-family: monospace;
     }
 
