@@ -19,8 +19,48 @@ body {
 footer {
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
     padding: 1em 0;
     width: 100%;
+}
+
+footer > fieldset {
+    display: grid;
+    grid-template-areas: "title" "date" "message" "submit";
+
+    @media (min-width: 768px) {
+        grid-template-areas:
+            "title title title title date"
+            "message message message message message"
+            "submit submit submit submit submit";
+    }
+    gap: 1em;
+
+    * {
+        padding: 0.5em 1ch;
+        font-size: 14px;
+        font-family: monospace;
+    }
+
+    #title {
+        grid-area: title;
+    }
+
+    #date {
+        grid-area: date;
+    }
+
+    #message {
+        grid-area: message;
+        min-height: 5em;
+        max-height: 12em;
+        resize: none;
+    }
+
+    #submit {
+        grid-area: submit;
+    }
 }
 
 code {
