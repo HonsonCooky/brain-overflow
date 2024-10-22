@@ -8,6 +8,7 @@ html {
 }
 
 body {
+    position: relative;
     margin: 0 auto;
     padding: 1em 2ch;
     max-width: 21cm;
@@ -17,8 +18,9 @@ body {
 
 footer {
     position: absolute;
-    bottom: 2dvh;
+    bottom: 0;
     padding: 1em 0;
+    width: 100%;
 }
 
 code {
