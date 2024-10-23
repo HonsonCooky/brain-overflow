@@ -1,25 +1,71 @@
+:root {
+    --base: #000000;
+    --text: #ffffff;
+    --add: #5f875f;
+    --addfg: #afffaf;
+    --change: #5f5f5f;
+    --changefg: #d0d0d0;
+    --delete: #875f5f;
+    --deletefg: #ffafaf;
+}
+
 * {
     box-sizing: border-box;
+    border-color: var(--text);
 }
 
 html {
     margin: 0;
+    background-color: var(--base);
     padding: 0;
+    color: var(--text);
 }
 
 body {
     position: relative;
+    margin: 0;
     margin: 0 auto;
-    padding: 1em 2ch;
+    padding: 0;
     max-width: 21cm;
     height: 100dvh;
     font-family: system-ui;
 }
 
+header {
+    position: relative;
+    background-color: var(--changefg);
+    padding: 0.5em 1ch 0 1ch;
+}
+
+header > h1 {
+    margin: 0;
+    border-radius: 0.5em 0.5em 0 0;
+    background-color: var(--base);
+    padding: 0.2em 1ch 0 1ch;
+    width: min-content;
+    white-space: nowrap;
+}
+
+header > img {
+    position: absolute;
+    max-height: 100%;
+    bottom: 0;
+    right: 0;
+}
+
+main {
+    margin: 2em 0;
+}
+
 main > details {
     summary {
         cursor: pointer;
+        padding: 0.4em 1ch;
         font-size: larger;
+
+        &:hover {
+            font-weight: bolder;
+        }
     }
 }
 
@@ -28,13 +74,15 @@ footer {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    padding: 1em 0;
+    margin: 0 auto;
     width: 100%;
 }
 
 footer > fieldset {
     display: grid;
+    border: 2px outset;
     grid-template-areas: "title" "date" "message" "submit";
+    gap: 1em;
 
     @media (min-width: 768px) {
         grid-template-areas:
@@ -42,12 +90,13 @@ footer > fieldset {
             "message message message message message"
             "submit submit submit submit submit";
     }
-    gap: 1em;
 
     * {
         padding: 0.5em 1ch;
         font-size: medium;
         font-family: monospace;
+        background-color: var(--changefg);
+        color: var(--base);
     }
 
     #title {
@@ -56,6 +105,7 @@ footer > fieldset {
 
     #date {
         grid-area: date;
+        cursor: text;
     }
 
     #message {
